@@ -14,6 +14,7 @@ mongoose.connect('mongodb+srv://curso:brasil2010@cluster0-sbkpe.mongodb.net/test
 
 app.use((req, res, next) => {
     req.io = io;
+    next();
 })
 
 app.use(cors());
