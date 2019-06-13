@@ -37,5 +37,11 @@ module.exports = {
         req.io.emit('post', post);
 
         return res.json(post);
+    },
+
+    async get(req, res){
+
+        const post = await Post.findById(req.params.id);
+        return res.json(post);
     }
 };

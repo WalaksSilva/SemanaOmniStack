@@ -6,7 +6,7 @@ const cors = require('cors');
 const app = express();
 
 const server = require('http').Server(app);
-const io = require('socked.io')(server);
+const io = require('socket.io')(server);
 
 mongoose.connect('mongodb+srv://curso:brasil2010@cluster0-sbkpe.mongodb.net/test?retryWrites=true&w=majority', {
     useNewUrlParser : true,

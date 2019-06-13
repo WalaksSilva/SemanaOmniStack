@@ -12,9 +12,12 @@ routes.get('/', (req, res) => {
     return res.send (`Hello ${req.query.name}`);
 });
 
+//Post
 routes.get('/posts', PostController.index);
+routes.get('/posts/:id', PostController.get)
 routes.post('/posts', upload.single('image'), PostController.store);
  
+//Like
 routes.post('/posts/:id/like', LikeController.store)
  
 module.exports = routes;
