@@ -12,6 +12,7 @@ mongoose.connect('mongodb+srv://curso:brasil2010@cluster0-sbkpe.mongodb.net/test
     useNewUrlParser : true,
 });
 
+
 app.use((req, res, next) => {
     req.io = io;
     next();
@@ -23,4 +24,4 @@ app.use('/files', express.static(path.resolve(__dirname, '..', 'uploads', 'resiz
 
 app.use(require('./routes'));
 
-app.listen(3333);
+server.listen(3333);
