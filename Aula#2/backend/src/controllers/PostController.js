@@ -14,8 +14,15 @@ module.exports = {
         const { author, place, description, hashtags } = req.body;
         const { filename: image } = req.file;
 
+        const today = new Date();  
+        
+        console.log(today.getTime());
+
+
+        const name2 = today.getTime();
+        console.log(name2);
         const [name] = image.split('.');
-        const fileName = `${name}.jpg`;
+        const fileName = `${name2}.jpg`;
 
         await sharp(req.file.path)
         .resize(500)
